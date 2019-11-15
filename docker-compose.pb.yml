@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  lint:
+    image: namely/protoc-all:1.16_0
+    entrypoint: "sh -c"
+    command: '"protoc -I/usr/local/include -I. --lint_out=. ./*.proto"'
+    volumes:
+      - .:/defs
+  go:
+    image: namely/protoc-all:1.16_0
+    command: "-d . -o ./pb --with-docs markdown,readme.md --with-gateway -l go"
+    volumes:
+      - .:/defs

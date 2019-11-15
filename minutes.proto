@@ -1,6 +1,33 @@
 syntax = "proto3";
-package tutorial
+package omnutspb;
 
 import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
 
-message Person {}
+message Person {
+  string id = 1;
+  string name = 2;
+}
+
+message Group {
+  string name = 1;
+  repeated Person member = 2;
+}
+
+message Minutes {
+  string id = 1;
+  string name = 2;
+  google.type.Date date = 3;
+  repeated Person attendees = 4;
+
+  message Agendum {
+    int32 no = 1;
+    string title = 2;
+    string description = 3;
+  }
+
+  repeated Agendum agenda = 5;
+  repeated string tags = 6;
+  google.protobuf.timestamp created_at = 7;
+  google.protobuf.timestamp updated_at = 8;
+}
