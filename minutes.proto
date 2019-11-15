@@ -28,6 +28,6 @@ message Minutes {
 
   repeated Agendum agenda = 5;
   repeated string tags = 6;
-  google.protobuf.timestamp created_at = 7;
-  google.protobuf.timestamp updated_at = 8;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
 }
