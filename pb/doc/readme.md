@@ -3,12 +3,11 @@
 
 ## Table of Contents
 
-- [minutes.proto](#minutes.proto)
-    - [Group](#omnutspb.Group)
-    - [Minutes](#omnutspb.Minutes)
-    - [Minutes.Agendum](#omnutspb.Minutes.Agendum)
-    - [Person](#omnutspb.Person)
+- [backlog.proto](#backlog.proto)
+    - [Backlog](#omnuts.api.v1.Backlog)
   
+    - [Backlog.BacklogType](#omnuts.api.v1.Backlog.BacklogType)
+    - [Backlog.Status](#omnuts.api.v1.Backlog.Status)
   
   
   
@@ -17,84 +16,56 @@
 
 
 
-<a name="minutes.proto"></a>
+<a name="backlog.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## minutes.proto
+## backlog.proto
 
 
 
-<a name="omnutspb.Group"></a>
+<a name="omnuts.api.v1.Backlog"></a>
 
-### Group
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| member | [Person](#omnutspb.Person) | repeated |  |
-
-
-
-
-
-
-<a name="omnutspb.Minutes"></a>
-
-### Minutes
+### Backlog
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| date | [google.type.Date](#google.type.Date) |  |  |
-| attendees | [Person](#omnutspb.Person) | repeated |  |
-| agenda | [Minutes.Agendum](#omnutspb.Minutes.Agendum) | repeated |  |
-| tags | [string](#string) | repeated |  |
-| created_at | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| updated_at | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-
-
-
-
-
-
-<a name="omnutspb.Minutes.Agendum"></a>
-
-### Minutes.Agendum
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| no | [int32](#int32) |  |  |
 | title | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="omnutspb.Person"></a>
-
-### Person
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
+| type | [Backlog.BacklogType](#omnuts.api.v1.Backlog.BacklogType) |  |  |
+| status | [Backlog.Status](#omnuts.api.v1.Backlog.Status) |  |  |
 
 
 
 
 
  
+
+
+<a name="omnuts.api.v1.Backlog.BacklogType"></a>
+
+### Backlog.BacklogType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PRODUCT | 0 |  |
+| SPRINT | 1 |  |
+
+
+
+<a name="omnuts.api.v1.Backlog.Status"></a>
+
+### Backlog.Status
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NOT_STARTED | 0 |  |
+| IN_PROGRESS | 1 |  |
+| COMPLETED | 2 |  |
+
 
  
 

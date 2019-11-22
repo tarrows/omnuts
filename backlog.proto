@@ -1,0 +1,21 @@
+syntax = "proto3";
+package omnuts.api.v1;
+
+// import "google/protobuf/timestamp.proto";
+// import "google/type/date.proto";
+
+message Backlog {
+  enum BacklogType {
+    PRODUCT = 0;
+    SPRINT = 1;
+  }
+  enum Status {
+    NOT_STARTED = 0;
+    IN_PROGRESS = 1;
+    COMPLETED = 2;
+  }
+  string id = 1;
+  string title = 2;
+  BacklogType type = 3;
+  Status status = 4;
+}
