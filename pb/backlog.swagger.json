@@ -14,6 +14,81 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
-  "definitions": {}
+  "paths": {
+    "/api/v1/backlogs": {
+      "get": {
+        "operationId": "List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListBacklogsResponse"
+            }
+          }
+        },
+        "tags": [
+          "BacklogService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "BacklogBacklogType": {
+      "type": "string",
+      "enum": [
+        "PRODUCT",
+        "SPRINT"
+      ],
+      "default": "PRODUCT"
+    },
+    "BacklogStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETED"
+      ],
+      "default": "NOT_STARTED"
+    },
+    "v1Backlog": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/BacklogBacklogType"
+        },
+        "status": {
+          "$ref": "#/definitions/BacklogStatus"
+        },
+        "vote": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "created_on": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_on": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ListBacklogsResponse": {
+      "type": "object",
+      "properties": {
+        "backlogs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Backlog"
+          }
+        }
+      }
+    }
+  }
 }

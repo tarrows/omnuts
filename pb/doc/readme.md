@@ -5,11 +5,14 @@
 
 - [backlog.proto](#backlog.proto)
     - [Backlog](#omnuts.api.v1.Backlog)
+    - [ListBacklogsRequest](#omnuts.api.v1.ListBacklogsRequest)
+    - [ListBacklogsResponse](#omnuts.api.v1.ListBacklogsResponse)
   
     - [Backlog.BacklogType](#omnuts.api.v1.Backlog.BacklogType)
     - [Backlog.Status](#omnuts.api.v1.Backlog.Status)
   
   
+    - [BacklogService](#omnuts.api.v1.BacklogService)
   
 
 - [Scalar Value Types](#scalar-value-types)
@@ -35,6 +38,34 @@
 | title | [string](#string) |  |  |
 | type | [Backlog.BacklogType](#omnuts.api.v1.Backlog.BacklogType) |  |  |
 | status | [Backlog.Status](#omnuts.api.v1.Backlog.Status) |  |  |
+| vote | [int32](#int32) |  |  |
+| created_on | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| updated_on | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+
+
+
+
+
+
+<a name="omnuts.api.v1.ListBacklogsRequest"></a>
+
+### ListBacklogsRequest
+
+
+
+
+
+
+
+<a name="omnuts.api.v1.ListBacklogsResponse"></a>
+
+### ListBacklogsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| backlogs | [Backlog](#omnuts.api.v1.Backlog) | repeated |  |
 
 
 
@@ -70,6 +101,16 @@
  
 
  
+
+
+<a name="omnuts.api.v1.BacklogService"></a>
+
+### BacklogService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| List | [ListBacklogsRequest](#omnuts.api.v1.ListBacklogsRequest) | [ListBacklogsResponse](#omnuts.api.v1.ListBacklogsResponse) |  |
 
  
 

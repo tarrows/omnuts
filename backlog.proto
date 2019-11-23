@@ -1,7 +1,8 @@
 syntax = "proto3";
 package omnuts.api.v1;
 
-// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
 // import "google/type/date.proto";
 
 message Backlog {
@@ -18,4 +19,20 @@ message Backlog {
   string title = 2;
   BacklogType type = 3;
   Status status = 4;
+  int32 vote = 5;
+  google.protobuf.Timestamp created_on = 6;
+  google.protobuf.Timestamp updated_on = 7;
+}
+
+service BacklogService {
+  rpc List(ListBacklogsRequest) returns (ListBacklogsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/backlogs"
+    };
+  }
+}
+
+message ListBacklogsRequest {}
+message ListBacklogsResponse {
+  repeated Backlog backlogs = 1;
 }
