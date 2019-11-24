@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// pb "github.com/c10t/omnuts/pb"
+)
 
 func main() {
 	fmt.Println("Hello")

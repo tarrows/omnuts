@@ -30,9 +30,18 @@ service BacklogService {
       get: "/api/v1/backlogs"
     };
   }
+
+  rpc Get(GetBacklogRequest) returns (Backlog) {
+    option (google.api.http) = {
+      get: "/api/v1/backlogs/{id}"
+    };
+  }
 }
 
 message ListBacklogsRequest {}
 message ListBacklogsResponse {
   repeated Backlog backlogs = 1;
+}
+message GetBacklogRequest {
+  string id = 1
 }
