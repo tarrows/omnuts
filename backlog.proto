@@ -43,5 +43,5 @@ message ListBacklogsResponse {
   repeated Backlog backlogs = 1;
 }
 message GetBacklogRequest {
-  string id = 1
+  string id = 1;
 }

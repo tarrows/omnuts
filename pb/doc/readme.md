@@ -5,6 +5,7 @@
 
 - [backlog.proto](#backlog.proto)
     - [Backlog](#omnuts.api.v1.Backlog)
+    - [GetBacklogRequest](#omnuts.api.v1.GetBacklogRequest)
     - [ListBacklogsRequest](#omnuts.api.v1.ListBacklogsRequest)
     - [ListBacklogsResponse](#omnuts.api.v1.ListBacklogsResponse)
   
@@ -41,6 +42,21 @@
 | vote | [int32](#int32) |  |  |
 | created_on | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
 | updated_on | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+
+
+
+
+
+
+<a name="omnuts.api.v1.GetBacklogRequest"></a>
+
+### GetBacklogRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
 
 
 
@@ -111,6 +127,7 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | List | [ListBacklogsRequest](#omnuts.api.v1.ListBacklogsRequest) | [ListBacklogsResponse](#omnuts.api.v1.ListBacklogsResponse) |  |
+| Get | [GetBacklogRequest](#omnuts.api.v1.GetBacklogRequest) | [Backlog](#omnuts.api.v1.Backlog) |  |
 
  
 

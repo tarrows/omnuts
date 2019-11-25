@@ -30,6 +30,30 @@
           "BacklogService"
         ]
       }
+    },
+    "/api/v1/backlogs/{id}": {
+      "get": {
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1Backlog"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "BacklogService"
+        ]
+      }
     }
   },
   "definitions": {
