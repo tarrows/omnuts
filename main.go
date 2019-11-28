@@ -67,5 +67,20 @@ func startHTTPServer(grpcPort, httpPort int) error {
 }
 
 func main() {
-	fmt.Println("Hello")
+	httpPort := 5000
+	grpcPort := 5001
+
+	errors := make(chan error)
+
+	go func() {
+		errors <- startGRPCServer(grpcPort)
+	}()
+
+	go func() {
+		errors <- startHTTPServer(grpcPort, httpPort)
+	}()
+
+	for err := range errors {
+		log.Fatalln(err)
+	}
 }
